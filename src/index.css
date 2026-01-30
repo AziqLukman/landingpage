@@ -1,0 +1,55 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+    html {
+        @apply scroll-smooth;
+    }
+
+    body {
+        @apply font-body bg-gray-50 dark:bg-background-dark text-gray-900 dark:text-white transition-colors duration-300;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        @apply bg-background-dark;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-surface-light rounded-full border-2 border-background-dark;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        @apply bg-primary/70;
+    }
+}
+
+.bg-grid-pattern {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+/* Animations */
+@keyframes text-gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.animate-text-gradient {
+    background-size: 200% auto;
+    animation: text-gradient 5s linear infinite;
+}
