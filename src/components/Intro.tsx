@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 export default function Intro({ onComplete }: { onComplete: () => void }) {
-    const text = "Aziq Luqman Hakim"
+    const text = ""
     const [displayText, setDisplayText] = useState("")
     const [cursorVisible, setCursorVisible] = useState(true)
 
@@ -64,7 +64,7 @@ export default function Intro({ onComplete }: { onComplete: () => void }) {
                 >
                     <div className="flex items-baseline bg-white/5 py-1 px-3 md:py-2 md:px-4 rounded-md backdrop-blur-sm border border-white/10">
                         <span className="font-mono text-xs md:text-sm lg:text-base text-gray-300 tracking-wider">
-                            www.ajekkk.dev
+                            ajekkk.my.id
                         </span>
                         <span className="ml-1.5 inline-block w-2 h-4 md:w-2.5 md:h-5 bg-[#10B981] animate-blink"></span>
                     </div>
