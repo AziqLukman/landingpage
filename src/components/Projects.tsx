@@ -6,6 +6,17 @@ export default function Projects() {
 
     const projects = [
         {
+            title: 'CashTrace',
+            year: '2026',
+            desc: language === 'id'
+                ? 'Aplikasi manajemen keuangan pribadi untuk melacak pemasukan, pengeluaran, dan menganalisis pola keuangan Anda.'
+                : 'Personal finance management app to track income, expenses, and analyze your financial patterns.',
+            tags: ['Express.js', 'Next.js', 'TypeScript', 'MySQL'],
+            image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2672&auto=format&fit=crop',
+            color: 'primary',
+            link: 'https://cashtrace.ajekkk.my.id'
+        },
+        {
             title: 'FinTrack Dashboard',
             year: '2023',
             desc: language === 'id'
@@ -60,9 +71,21 @@ export default function Projects() {
                                     <button className="bg-white text-black p-3 rounded-full hover:scale-110 transition-transform" title="View Code">
                                         <Github size={20} />
                                     </button>
-                                    <button className="bg-primary text-white p-3 rounded-full hover:scale-110 transition-transform" title="Live Demo">
-                                        <ExternalLink size={20} />
-                                    </button>
+                                    {project.link ? (
+                                        <a 
+                                            href={project.link} 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            className="bg-primary text-white p-3 rounded-full hover:scale-110 transition-transform" 
+                                            title="Live Demo"
+                                        >
+                                            <ExternalLink size={20} />
+                                        </a>
+                                    ) : (
+                                        <button className="bg-primary text-white p-3 rounded-full hover:scale-110 transition-transform" title="Live Demo">
+                                            <ExternalLink size={20} />
+                                        </button>
+                                    )}
                                 </div>
                             </div>
 
