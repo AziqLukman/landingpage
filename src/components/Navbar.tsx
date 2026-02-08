@@ -1,11 +1,11 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Sun, Moon, Globe } from 'lucide-react'
+import { Menu, X, Sun, Moon, Globe, Code } from 'lucide-react'
 import { clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 import { useTheme } from '../context/ThemeContext'
 import { useLanguage } from '../context/LanguageContext'
-import AnimatedTerminal from './AnimatedTerminal'
+
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
@@ -15,23 +15,7 @@ export default function Navbar() {
     const { language, setLanguage, t } = useLanguage()
     const [langOpen, setLangOpen] = useState(false)
 
-    // Ref to measure container width for the animation
-    const containerRef = useRef<HTMLDivElement>(null)
-    const [containerWidth, setContainerWidth] = useState(0)
 
-    useEffect(() => {
-        if (containerRef.current) {
-            const updateWidth = () => {
-                setContainerWidth(containerRef.current?.offsetWidth || 0)
-            }
-
-            // Initial measure
-            updateWidth()
-
-            window.addEventListener('resize', updateWidth)
-            return () => window.removeEventListener('resize', updateWidth)
-        }
-    }, [])
 
     useEffect(() => {
         const handleScroll = () => {
@@ -56,13 +40,17 @@ export default function Navbar() {
             visible ? "translate-y-0" : "-translate-y-full"
         )}>
             <div
-                ref={containerRef}
+
                 className={twMerge(
                     "w-full max-w-5xl backdrop-blur-md bg-background-dark/80 dark:bg-background-dark/80 bg-white/80 border border-white/10 dark:border-white/10 border-gray-200 rounded-xl px-6 py-3 flex items-center justify-between shadow-lg shadow-neon/10"
                 )}>
                 <div className="flex items-center gap-2 group cursor-pointer relative z-20">
-                    <AnimatedTerminal containerWidth={containerWidth} />
-                    <span className="font-display font-bold text-xl tracking-tight text-gray-900 dark:text-white group-hover:text-primary dark:group-hover:text-primary-glow transition-colors pl-2">Ajekkk</span>
+                    <span className="font-display font-bold text-xl tracking-tight pl-2 flex items-center gap-1">
+                        <Code className="text-accent-purple w-6 h-6 transition-transform group-hover:rotate-12 duration-300" />
+                        <span className="bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent group-hover:to-accent-purple transition-all duration-300">
+                            Ajekkk
+                        </span>
+                    </span>
                 </div>
 
                 {/* Desktop Menu */}

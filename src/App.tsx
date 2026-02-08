@@ -9,6 +9,7 @@ import Footer from './components/Footer'
 import Intro from './components/Intro'
 import { ThemeProvider } from './context/ThemeContext'
 import { LanguageProvider } from './context/LanguageContext'
+import ClickSpark from './components/ClickSpark'
 
 function App() {
     const [showIntro, setShowIntro] = useState(true)
@@ -17,10 +18,18 @@ function App() {
         return <Intro onComplete={() => setShowIntro(false)} />
     }
 
+
     return (
         <ThemeProvider>
             <LanguageProvider>
                 <Background>
+                    <ClickSpark
+                        sparkColor='#fff'
+                        sparkSize={10}
+                        sparkRadius={20}
+                        sparkCount={8}
+                        duration={400}
+                    />
                     <Navbar />
                     <Hero />
                     <About />
