@@ -6,6 +6,17 @@ export default function Projects() {
 
     const projects = [
         {
+            title: 'SholatKu',
+            year: '2026',
+            desc: language === 'id'
+                ? 'Aplikasi jadwal sholat lengkap dengan countdown, Al-Quran, kompas kiblat, tasbih digital, Ramadhan tracker dengan gamifikasi, dan notifikasi pengingat sholat. PWA yang bisa di-install.'
+                : 'Comprehensive prayer times app with countdown, Al-Quran reader, Qibla compass, digital tasbih, Ramadhan tracker with gamification, and prayer reminder notifications. Installable PWA.',
+            tags: ['React', 'Vite', 'TailwindCSS', 'PWA'],
+            image: '/sholatku-icon.png',
+            color: 'primary',
+            link: 'https://sholatku.ajekkk.my.id'
+        },
+        {
             title: 'CashTrace',
             year: '2026',
             desc: language === 'id'
